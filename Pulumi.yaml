@@ -1,5 +1,5 @@
-name: hugo-cd
-description: A minimal Google Cloud Python Pulumi program to deploy a Hugo site to GKE.
+name: gcp-infrastructure
+description: A minimal Google Cloud Python Pulumi program to deploy infrastructure.
 runtime:
     name: python
     options:

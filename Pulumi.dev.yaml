@@ -1,13 +1,13 @@
-name: hugo-cd
+name: gcp-infrastructure
 runtime: python
-description: A minimal Google Cloud Python Pulumi program to deploy a Hugo site to GKE.
+description: A minimal Google Cloud Python Pulumi program to deploy infrastructure.
 config:
-  hugo-cd:buckets:
+  gcp-infrastructure:buckets:
     - name: my-bucket-0
       location: US
     - name: my-bucket-1
       location: US
-  hugo-cd:instances:
+  gcp-infrastructure:instances:
     - name: my-instance-0
       zone: us-central1-a
       machine_type: e2-micro
@@ -16,7 +16,7 @@ config:
           image: debian-cloud/debian-9-stretch-v20200420
       network_interfaces:
         - network: default
-  hugo-cd:clusters:
+  gcp-infrastructure:clusters:
     - name: my-cluster
       location: us-central1-a
       remove_default_node_pool: true
