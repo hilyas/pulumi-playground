@@ -1,0 +1,28 @@
+name: hugo-cd
+runtime: python
+description: A minimal Google Cloud Python Pulumi program to deploy a Hugo site to GKE.
+config:
+  hugo-cd:buckets:
+    - name: my-bucket-0
+      location: US
+    - name: my-bucket-1
+      location: US
+  hugo-cd:instances:
+    - name: my-instance-0
+      zone: us-central1-a
+      machine_type: e2-micro
+      boot_disk:
+        initialize_params:
+          image: debian-cloud/debian-9-stretch-v20200420
+      network_interfaces:
+        - network: default
+  hugo-cd:clusters:
+    - name: my-cluster
+      location: us-central1-a
+      remove_default_node_pool: true
+      initial_node_count: 1
+      node_pools:
+        - machine_type: e2-micro
+          preemptible: true
+          disk_size_gb: 10
+          service_account: default

@@ -1,0 +1,6 @@
+name: hugo-cd
+description: A minimal Google Cloud Python Pulumi program to deploy a Hugo site to GKE.
+runtime:
+    name: python
+    options:
+        virtualenv: venv
